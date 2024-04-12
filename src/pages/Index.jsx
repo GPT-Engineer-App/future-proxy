@@ -19,7 +19,7 @@ const Index = () => {
           <button className="md:hidden text-2xl focus:outline-none" onClick={toggleMobileMenu}>
             {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
           </button>
-          <nav className={`${isMobileMenuOpen ? "block" : "hidden"} md:block absolute md:static top-full left-0 md:top-auto md:left-auto w-full md:w-auto bg-gray-800 md:bg-transparent p-4 md:p-0`}>
+          <nav className={`${isMobileMenuOpen ? "block" : "hidden"} md:block absolute md:static top-full left-0 md:top-auto md:left-auto w-full md:w-auto bg-gray-800/50 md:bg-transparent backdrop-blur-lg p-4 md:p-0 transition-transform duration-300 ease-in-out transform ${isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"}`}>
             <ul className="flex space-x-6 font-medium">
               <li>Home</li>
               <li>Documentation</li>
@@ -30,7 +30,7 @@ const Index = () => {
         </div>
       </header>
 
-      <main className="px-6 md:px-10 py-16 md:py-24 bg-gradient-to-b from-gray-900 to-gray-800 parallax min-h-screen">
+      <main className="px-6 md:px-10 py-16 md:py-24 bg-gradient-to-b from-gray-900 to-gray-800 parallax min-h-screen relative z-10">
         <section className="text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">Access AI Power for Free</h2>
           <p className="text-lg md:text-xl mb-8">Integrate AI features in your applications with our free and open model API/reverse proxy.</p>
