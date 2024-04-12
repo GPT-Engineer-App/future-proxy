@@ -1,6 +1,13 @@
-import { FaArrowRight, FaRobot, FaCode, FaLockOpen } from "react-icons/fa";
+import { useState } from "react";
+import { FaArrowRight, FaRobot, FaCode, FaLockOpen, FaBars, FaTimes } from "react-icons/fa";
 
 const Index = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
   return (
     <div className="min-h-screen bg-gray-900 text-white">
       <header className="py-4 px-6 md:py-6 md:px-10 bg-gray-800/30 backdrop-blur sticky top-0 z-50">
@@ -9,7 +16,10 @@ const Index = () => {
             <FaRobot className="inline mr-2" />
             FREE+OPEN
           </h1>
-          <nav className="hidden md:block">
+          <button className="md:hidden text-2xl focus:outline-none" onClick={toggleMobileMenu}>
+            {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
+          </button>
+          <nav className={`${isMobileMenuOpen ? "block" : "hidden"} md:block absolute md:static top-full left-0 md:top-auto md:left-auto w-full md:w-auto bg-gray-800 md:bg-transparent p-4 md:p-0`}>
             <ul className="flex space-x-6 font-medium">
               <li>Home</li>
               <li>Documentation</li>
@@ -51,7 +61,7 @@ const Index = () => {
         </section>
       </main>
 
-      <footer className="bg-gray-800/30 py-4 md:py-6 px-6 md:px-10 backdrop-blur">
+      <footer className="bg-gray-800/30 py-6 px-6 md:px-10 backdrop-blur">
         <div className="text-center">
           <p>&copy; {new Date().getFullYear()} FREE+OPEN. All rights reserved.</p>
         </div>
