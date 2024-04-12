@@ -3,7 +3,7 @@ import { FaArrowRight, FaRobot, FaCode, FaLockOpen } from "react-icons/fa";
 const Index = () => {
   return (
     <div className="min-h-screen bg-gray-900 text-white">
-      <header className="py-6 px-4 md:px-10 bg-gray-800">
+      <header className="py-6 px-4 md:px-10 bg-gray-800/30 backdrop-blur">
         <div className="flex justify-between items-center">
           <h1 className="text-3xl font-bold">
             <FaRobot className="inline mr-2" />
@@ -20,30 +20,30 @@ const Index = () => {
         </div>
       </header>
 
-      <main className="px-4 md:px-10 py-20">
+      <main className="px-4 md:px-10 py-20 bg-gradient-to-b from-gray-900 to-gray-800 parallax">
         <section className="text-center">
           <h2 className="text-5xl font-bold mb-6">Access AI Power for Free</h2>
           <p className="text-xl mb-8">Integrate AI features in your applications with our free and open model API/reverse proxy.</p>
-          <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded inline-flex items-center">
+          <button className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-bold py-3 px-6 rounded-full inline-flex items-center transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105">
             <span>Get Started</span>
             <FaArrowRight className="ml-2" />
           </button>
         </section>
 
-        <section className="mt-20 grid md:grid-cols-3 gap-10">
-          <div className="bg-gray-800 p-6 rounded-lg text-center">
+        <section className="mt-20 grid md:grid-cols-3 gap-12">
+          <div className="bg-gray-800/50 p-8 rounded-lg text-center backdrop-blur hover:bg-gray-800/70 transition duration-300 ease-in-out transform hover:-translate-y-2">
             <FaCode className="text-6xl mx-auto mb-4" />
             <h3 className="text-2xl font-bold mb-3">Easy Integration</h3>
             <p>Simple and straightforward APIs that you can integrate with any project in minutes.</p>
           </div>
 
-          <div className="bg-gray-800 p-6 rounded-lg text-center">
+          <div className="bg-gray-800/50 p-8 rounded-lg text-center backdrop-blur hover:bg-gray-800/70 transition duration-300 ease-in-out transform hover:-translate-y-2">
             <FaLockOpen className="text-6xl mx-auto mb-4" />
             <h3 className="text-2xl font-bold mb-3">Open Source</h3>
             <p>We believe in the power of open source. Our API is available for anyone to use and contribute to.</p>
           </div>
 
-          <div className="bg-gray-800 p-6 rounded-lg text-center">
+          <div className="bg-gray-800/50 p-8 rounded-lg text-center backdrop-blur hover:bg-gray-800/70 transition duration-300 ease-in-out transform hover:-translate-y-2">
             <FaRobot className="text-6xl mx-auto mb-4" />
             <h3 className="text-2xl font-bold mb-3">Advanced AI</h3>
             <p>Harness the latest advancements in artificial intelligence for your applications.</p>
@@ -51,7 +51,7 @@ const Index = () => {
         </section>
       </main>
 
-      <footer className="bg-gray-800 py-6 px-4 md:px-10">
+      <footer className="bg-gray-800/30 py-6 px-4 md:px-10 backdrop-blur">
         <div className="text-center">
           <p>&copy; {new Date().getFullYear()} FREE+OPEN. All rights reserved.</p>
         </div>
